@@ -4,7 +4,7 @@
 //getResult(2,5,-7); // D > 0
 //getAverageMark([3,4,5]);
 //getAverageMark("2 3 4 5 2 5 8");
-askDrink(1993, 4, 6);
+//askDrink(Alex,1993, 4, 6);
 function getResult(a,b,c){
     // код для задачи №1 писать здесь
     let x = [];
@@ -62,7 +62,7 @@ function askDrink(name,dateOfBirthday){
     let birthDate = new Date(dateOfBirthday);
     let today = new Date();
     let UsersAge = (today.getFullYear() - birthDate.getFullYear());
-    console.log (`User - ${name} | ДР - ${UsersAge} | Year - ${birthDate.getFullYear()}`)
+    //console.log (`User - ${name} | ДР - ${UsersAge} | Year - ${birthDate.getFullYear()}`)
     if (UsersAge >18) {
         result = `Не желаете ли олд-фэшн, ${name}?`;
     }
