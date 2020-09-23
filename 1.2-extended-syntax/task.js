@@ -3,25 +3,22 @@
 //getResult(2,1,3); // D < 0
 //getResult(2,5,-7); // D > 0
 //getAverageMark([3,4,5]);
-//getAverageMark("2 3 4 5 2 5 8");
+//getAverageMark([2,3,4,5,2,5,8]);
 //askDrink(Alex,1993, 4, 6);
+
 function getResult(a,b,c){
     // код для задачи №1 писать здесь
     let x = [];
-    let discriminantD = -1;
-    discriminantD = b ** 2 - 4 * a  * c;
-    if (discriminantD > 0) {
-        let x1 = ((-b - Math.sqrt(discriminantD)) / (2 * a));
-        let x2 = ((-b + Math.sqrt(discriminantD)) / (2 * a));
-        x.push(x2);
-        x.push(x1);
+   
+    let discriminantD = b ** 2 - 4 * a  * c;
+    if (discriminantD > 0) {        
+        x.push((-b - Math.sqrt(discriminantD)) / (2 * a));
+        x.push((-b + Math.sqrt(discriminantD)) / (2 * a));
     }
-    else if (discriminantD === 0) {
-        let x1 = (-b) / (2 * a);
-        x.push(x1);
+    else if (discriminantD === 0) {      
+        x.push((-b) / (2 * a));
     }
-    
-    //console.log(`D - ${discriminantD} `, x);
+      
      return x;
 }
 
@@ -30,29 +27,20 @@ function getAverageMark(marks){
     let averageMark = 0;
     let summaMarks = 0;
     let arrayOfMarks = [];
-    
-    //console.log(marks);
-    /*if (marks.indexOf(',') !== -1) {
-        arrayOfMarks = marks.split(','); 
-    } else if (marks.indexOf(' ') !== -1) {
-        arrayOfMarks = marks.split(' ');
-    }*/
-    //arrayOfMarks = marks.split(','); 
+    const maxUseMarks= 5;  
     arrayOfMarks = marks;
     let lengthArrayOfMarks = arrayOfMarks.length;
-    if (lengthArrayOfMarks > 0) {
-        if (lengthArrayOfMarks > 4) arrayOfMarks.splice(5,lengthArrayOfMarks);
-        for (let mark of arrayOfMarks) {
-            summaMarks += Number(mark);
-            //console.log(`оценка - ${mark} | сумма - ${summaMarks} `);
-        } 
-        averageMark = Math.round(summaMarks / arrayOfMarks.length);
-    }
-    else {
-       // console.log('оценок нет');
+    if (lengthArrayOfMarks === 0) {
         averageMark = 0;
+        return averageMark;
     }
-    //console.log(`средняя оценка - ${averageMark} | сумма - ${averageMark} |  `, arrayOfMarks);
+    
+    if (lengthArrayOfMarks > maxUseMarks) arrayOfMarks.splice(maxUseMarks);
+    for (let mark of arrayOfMarks) {
+        summaMarks += Number(mark);       
+    } 
+    averageMark = Math.round(summaMarks / arrayOfMarks.length);    
+    
      return averageMark;
 }
 
@@ -61,9 +49,8 @@ function askDrink(name,dateOfBirthday){
     let result;
     let birthDate = new Date(dateOfBirthday);
     let today = new Date();
-    let UsersAge = (today.getFullYear() - birthDate.getFullYear());
-    //console.log (`User - ${name} | ДР - ${UsersAge} | Year - ${birthDate.getFullYear()}`)
-    if (UsersAge >18) {
+    let usersAge = (today.getFullYear() - birthDate.getFullYear());
+    if (usersAge >18) {
         result = `Не желаете ли олд-фэшн, ${name}?`;
     }
     else {
