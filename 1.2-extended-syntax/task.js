@@ -11,9 +11,9 @@ function getResult(a,b,c){
     let x = [];
    
     let discriminantD = b ** 2 - 4 * a  * c;
-    if (discriminantD > 0) {        
-        x.push((-b - Math.sqrt(discriminantD)) / (2 * a));
+    if (discriminantD > 0) {                
         x.push((-b + Math.sqrt(discriminantD)) / (2 * a));
+        x.push((-b - Math.sqrt(discriminantD)) / (2 * a));
     }
     else if (discriminantD === 0) {      
         x.push((-b) / (2 * a));
