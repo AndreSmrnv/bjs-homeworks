@@ -5,9 +5,9 @@
 //showSolutionsMessage(1, 5, 4);
 //showSolutionsMessage(1, 2, 1);
 //showSolutionsMessage(1, 2, 10);
-console.log(getDecodedValue(1));
-console.log(getDecodedValue(0));
-console.log(getPersonData({aaa: 1, bbb: 0}));
+//console.log(getDecodedValue(1));
+//console.log(getDecodedValue(0));
+//console.log(getPersonData({aaa: 1, bbb: 0}));
 
 //#1
 function getSolutions(a,b,c) {
