@@ -95,8 +95,8 @@ class StudentLog {
     }
 }
 ////tests
-
-/*const sherlock = new PrintEditionItem("Полное собрание повестей и рассказов о Шерлоке Холмсе в одном томе", 2019, 1008);
+/*
+const sherlock = new PrintEditionItem("Полное собрание повестей и рассказов о Шерлоке Холмсе в одном томе", 2019, 1008);
 
 console.log(sherlock.releaseDate); //2019
 sherlock.state = 15 ;
@@ -124,7 +124,9 @@ console.log(library.findBookBy("name", "Пикник на обочине").state
 console.log(library.findBookBy("releaseDate", 1924).name); //"Мурзилка"
 
 console.log("Количество книг до выдачи: " + library.books.length); //Количество книг до выдачи: 4
-library.giveBookByName("Машина времени");
-//console.log(library.findBookBy("releaseDate", 1924).name);
+console.log(library.findBookBy("releaseDate", 1924));
+//library.giveBookByName("Машина времени");
+console.log(library.giveBookByName("Машина времени").state);
 console.log("Количество книг после выдачи: " + library.books.length); //Количество книг после выдачи: 3
+
 */
