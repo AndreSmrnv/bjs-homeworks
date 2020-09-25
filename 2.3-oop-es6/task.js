@@ -80,10 +80,13 @@ class Library  {
     } 
     giveBookByName(bookName) {
         let typeItem = 'name' ;
-        let indexBook = -1;
-        let book = this.books.find(item => item[typeItem] == bookName); 
-        if (book !== undefined) this.books.splice(this.books.findIndex(item => item[typeItem] == bookName),1) ;
-        return  book ? book : null; 
+        let indexBook = this.books.findIndex(item => item[typeItem] == bookName);
+        let book = null;
+        if (indexBook !== -1) {
+            book = this.books[indexBook];
+            this.books.splice(indexBook,1) ;             
+        }    
+        return  book ; 
     }                 
 }
 
@@ -95,7 +98,7 @@ class StudentLog {
     }
 }
 ////tests
-/*
+
 const sherlock = new PrintEditionItem("Полное собрание повестей и рассказов о Шерлоке Холмсе в одном томе", 2019, 1008);
 
 console.log(sherlock.releaseDate); //2019
@@ -126,11 +129,11 @@ console.log(library.findBookBy("releaseDate", 1924).name); //"Мурзилка"
 console.log("Количество книг до выдачи: " + library.books.length); //Количество книг до выдачи: 4
 console.log(library.findBookBy("releaseDate", 1924));
 //library.giveBookByName("Машина времени");
-console.log(library.giveBookByName("Машина времени"));
+console.log(library.giveBookByName("Машина времени2"));
 console.log("Количество книг после выдачи: " + library.books.length); //Количество книг после выдачи: 3
 for (let i of library.books) {
     console.log("книги после выдачи: " + i.name); 
 }
-
+/*
 
 */
